@@ -13,7 +13,7 @@ __22 of April, 10:00-11:00 CEST.__
 
 
 #### Agenda:
-- Introduction to Git version control system (presentation with slides, ~30 minutes): 
+- Introduction to git version control system. Presentation with slides (intro_git.pdf) (~30 minutes): 
 	- how to clone or create a git repository;
 	- how to check and visualize the status and the branches of the repository;
 	- how to manage the repository: git pull, git push, git fetch, git merge, git rebase, git add, git commit, git checkout, git reset.
