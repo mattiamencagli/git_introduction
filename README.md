@@ -1,6 +1,6 @@
 <img title="git" alt="git" src="git_imm.png">
-# Introduction to git
 
+# Introduction to git
 Short introductionary course on git for European HPC projects.
 
 
