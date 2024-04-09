@@ -27,4 +27,6 @@ __22 of April, 10:00-11:00 CEST.__
 
 ##### Contacts:
 _Mattia Mencagli - m.mencagli@cineca.it_
+
 _HPC specialist at CINECA: high-level support for SPACE-CoE project._
+
