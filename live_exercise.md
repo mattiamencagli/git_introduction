@@ -2,7 +2,7 @@
 
 # Live exercise
 
-#### Intro
+## Intro
 
 Let's start by creating a local repository:
 
@@ -61,7 +61,7 @@ if, instead, we wanted to start by cloning a repository we could have just done:
 $ git clone git@github.com:USERNAME/my_first_repo.git
 ```````
 
-#### Managing files
+## Managing files
 
 Let's modify the file we have:
 
@@ -127,3 +127,57 @@ $ git status
 $ git commit -m "rm dir/file2 and rename first_file"
 $ git push
 ```````
+
+## Undoing thing
+
+But what if we want to undo things? Let's try to un-stage and un-modify a file:
+
+``````
+$ echo "and here's the third line" >> file
+$ git add file
+$ git status
+$ git restore --staged file      (or git reset HEAD file)   // un-stage
+$ git status
+$ git restore file       (or git checkout file)   //un-modify
+$ cat file
+``````
+
+And to undo the last (or 3 lasts) local commit?
+
+````````
+$ echo "and here's the third line" >> file
+$ git commit -a -m "3rd line added to file"
+$ git status    // Your branch is ahead of 'origin/master' by 1 commit.
+$ git reset HEAD~1      (or HEAD~3 for last 3 commits)
+$ git status
+$ git restore file
+````````
+
+But What if you already push the last commit that you want to come back to?
+
+````````
+$ echo "and here's the third line" >> file
+$ git commit -a -m "3rd line added to file"
+$ git push 
+$ git status
+$ git revert HEAD
+$ git status
+$ git restore file
+````````
+
+And to revert two commits? You have to use a range: from 2 commits before HEAD (HEAD~2) to HEAD itself (HEAD), as it follows:
+
+````````
+$ echo "and here's the third line" >> file
+$ git commit -a -m "3rd line added to file"
+$ echo "and here's the fourth line" >> file
+$ git commit -a -m "4rd line added to file"
+$ git push 
+$ git status
+$ git revert HEAD~2..HEAD
+$ git status
+$ cat file
+$ git restore file
+````````
+
+## Branches
